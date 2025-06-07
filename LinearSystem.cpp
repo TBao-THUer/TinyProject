@@ -19,7 +19,10 @@ LinearSystem::LinearSystem(Matrix* pA, Vector* pb) : mpA(pA), mpb(pb) {
 }
 
 // Destructor
-LinearSystem::~LinearSystem() {}
+LinearSystem::~LinearSystem() {
+    delete mpA;
+    delete mpb;
+}
 
 // Solving using Gaussian elimination with pivoting
 Vector LinearSystem::Solve() {
